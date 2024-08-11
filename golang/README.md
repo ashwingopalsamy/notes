@@ -47,7 +47,7 @@ worth a skim through to refresh '**_Go_**' in one go.
 - In languages like C, C++, Java there is no definite specification that mentions on the order of evaluation of function arguments.
 - In Python, the order of evaluation of function arguments is similar to Go.
 
-## 📝 Pointers
+### 📝 Pointers
 
 - Unlike C, Go does not have 'pointer arithmetic'.
 - As mathematical operations on memory addresses may potentially cause security vulnerabilities, Go intentionally omitted the use of pointer arithmetics.
@@ -77,6 +77,32 @@ worth a skim through to refresh '**_Go_**' in one go.
 
 ## 📝 Methods and Interfaces
 
+### Methods
+
 - In Go, a method is just a function with receiver argument.
 - One cannot declare a method with a receiver whose type is defined in another package (including internal packages).
+
+### Interfaces
+
 - Interfaces are implemented implicitly in Go. There is no `implements` keyword.
+
+## 📝 Errors, Panic & Defer
+
+### Defer
+
+- A deferred function’s arguments are evaluated when the defer statement is evaluated.
+- Deferred function calls are executed in Last In First Out order after the surrounding function returns.
+- Deferred functions may read and assign to the returning function’s named return values.
+- Defer calls are evaluated immediately but the function call is not executed until the surrounding function returns.
+
+### Panic
+
+- Panic is a built-in function that stops the ordinary flow of control and begins panicking.
+- Panics can be initiated by invoking panic directly.
+- They can also be caused by runtime errors, such as out-of-bounds array accesses.
+
+### Recover
+
+- Recover is a built-in function that regains control of a panicking goroutine.
+- Recover is only useful inside deferred functions. During normal execution, a call to recover will return nil and have no other effect.
+- If the current goroutine is panicking, a call to recover will capture the value given to panic and resume normal execution.
