@@ -75,33 +75,33 @@ worth a skim through to refresh '**_Go_**' in one go.
 - You can omit fields in a struct literal, and their values will be the zero value for their respective types.
 - You can create a pointer to a struct literal using the `&` operator.
 
-## 📝 Methods and Interfaces
+## Methods and Interfaces
 
-### Methods
+### 📝 Methods
 
 - In Go, a method is just a function with receiver argument.
 - One cannot declare a method with a receiver whose type is defined in another package (including internal packages).
 
-### Interfaces
+### 📝 Interfaces
 
 - Interfaces are implemented implicitly in Go. There is no `implements` keyword.
 
-## 📝 Errors, Panic & Defer
+## Errors, Panic & Defer
 
-### Defer
+### 📝 Defer
 
 - A deferred function’s arguments are evaluated when the defer statement is evaluated.
 - Deferred function calls are executed in Last In First Out order after the surrounding function returns.
 - Deferred functions may read and assign to the returning function’s named return values.
 - Defer calls are evaluated immediately but the function call is not executed until the surrounding function returns.
 
-### Panic
+### 📝 Panic
 
 - Panic is a built-in function that stops the ordinary flow of control and begins panicking.
 - Panics can be initiated by invoking panic directly.
 - They can also be caused by runtime errors, such as out-of-bounds array accesses.
 
-### Recover
+### 📝 Recover
 
 - Recover is a built-in function that regains control of a panicking goroutine.
 - Recover is only useful inside deferred functions. During normal execution, a call to recover will return nil and have no other effect.
