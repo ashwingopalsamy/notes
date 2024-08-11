@@ -6,11 +6,6 @@ worth a skim through to refresh '**_Go_**' in one go.
 
 ## Basics
 
-### 📝 Slices
-
-- `Slices` are like references to `arrays`, when you create a slice from an existing array - you are essentially interacting wit the underlying array.
-- Zero value of a `slice` is `nil`.
-
 ### 📝 Zero Values of Data Types
 
 | Data Type | Zero Value |
@@ -60,6 +55,25 @@ worth a skim through to refresh '**_Go_**' in one go.
 - W.r.t to 'Structs',
   - Go provides the ability to access a struct's fields via its pointer, without an explicit dereference.
   - i.e For a struct 'X' having its pointer 'p', to access the struct using pointer we can use `p.X` instead of `(*p).X`
+
+### 📝 Slices
+
+- `Slices` are like references to `arrays`, when you create a slice from an existing array - you are essentially interacting wit the underlying array.
+- Zero value of a `slice` is `nil`.
+- When attempted to change a slice's capacity with a higher value, we get `slice bounds of range` error.
+
+### 📝 Maps
+
+- A `nil` map is essentially an empty map with a crucial limitation: you cannot add or modify any key-value pairs to it.
+- Attempting to do so will result in a `panic` with `runtime error`.
+- Map literals require `key-value pairs`, unlike 'Struct Literals'.
+
+### 📝 Struct Literals
+
+- A struct literal denotes a newly allocated struct value by listing the values of its fields.
+- The order of fields in a struct literal doesn't matter.
+- You can omit fields in a struct literal, and their values will be the zero value for their respective types.
+- You can create a pointer to a struct literal using the `&` operator.
 
 ## 📝 Methods and Interfaces
 
