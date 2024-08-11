@@ -1,2 +1,3 @@
-# learn-go
-a refresher with key points about go
+# notes
+
+a refresher on topics that matter.
