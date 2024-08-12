@@ -55,6 +55,10 @@ worth a skim through to refresh '**_Go_**' in one go.
 - W.r.t to 'Structs',
   - Go provides the ability to access a struct's fields via its pointer, without an explicit dereference.
   - i.e For a struct 'X' having its pointer 'p', to access the struct using pointer we can use `p.X` instead of `(*p).X`
+- Go copies values when you pass them to functions/methods, so if you're writing a function that needs to mutate state you'll need it to take a pointer to the thing you want to change.
+- When a function returns a pointer to something, you need to make sure you check if it's nil or you might raise a runtime exception - the compiler won't help you here.
+
+
 
 ### 📝 Slices
 
@@ -87,6 +91,10 @@ worth a skim through to refresh '**_Go_**' in one go.
 - Interfaces are implemented implicitly in Go. There is no `implements` keyword.
 
 ## Errors, Panic & Defer
+
+### 📝 Errors
+- Errors are the way to signify failure when calling a function/method.
+- More on errors at: [Don’t just check errors, handle them gracefully](https://dave.cheney.net/2016/04/27/dont-just-check-errors-handle-them-gracefully)
 
 ### 📝 Defer
 
