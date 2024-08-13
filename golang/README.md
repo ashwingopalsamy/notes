@@ -57,6 +57,7 @@ worth a skim through to refresh '**_Go_**' in one go.
   - i.e For a struct 'X' having its pointer 'p', to access the struct using pointer we can use `p.X` instead of `(*p).X`
 - Go copies values when you pass them to functions/methods, so if you're writing a function that needs to mutate state you'll need it to take a pointer to the thing you want to change.
 - When a function returns a pointer to something, you need to make sure you check if it's nil or you might raise a runtime exception - the compiler won't help you here.
+- While pointers can point to the same memory location, the pointers themselves are stored in different locations.
 
 
 
@@ -68,9 +69,16 @@ worth a skim through to refresh '**_Go_**' in one go.
 
 ### 📝 Maps
 
+- A Map will not throw an error if the value already exists. Instead, they will go ahead and overwrite the value with the newly provided value. 
 - A `nil` map is essentially an empty map with a crucial limitation: you cannot add or modify any key-value pairs to it.
 - Attempting to do so will result in a `panic` with `runtime error`.
 - Map literals require `key-value pairs`, unlike 'Struct Literals'.
+- When you pass a map to a function/method, you are indeed copying it, but just the pointer part, not the underlying data structure that contains the data.
+- When iterating over a map with a range loop, the iteration order is not specified and is not guaranteed to be the same from one iteration to the next. 
+- If you require a stable iteration order you must maintain a separate data structure that specifies that order.
+- Maps are not safe for concurrent use:
+  - If you need to read from and write to a map from concurrently executing goroutines, the accesses must be mediated by some kind of synchronization mechanism. 
+  - One common way to protect maps is with `sync.RWMutex`.
 
 ### 📝 Struct Literals
 
