@@ -25,15 +25,16 @@ worth a skim through to refresh '**_Go_**' in one go.
   - [5. User-Defined Types](#5-user-defined-types)
     - [a. Type Alias](#a-type-alias)
     - [b. Custom Types](#b-custom-types)
-- [Zero Values of Data Types](#zero-values-of-data-types)
+  - [Zero Values of Data Types](#zero-values-of-data-types)
 - [Control Statements](#control-statements)
   - [Order of Execution](#order-of-execution)
   - [Order of Evaluation](#order-of-evaluation)
-- [Pointers](#pointers)
-- [Slices](#slices)
-- [Variadic Arguments](#variadic-arguments)
-- [Maps](#maps)
-- [Struct Literals](#struct-literals)
+- [Composite Data Types](#composite-data-types)
+  - [Pointers](#pointers)
+  - [Slices](#slices)
+  - [Variadic Arguments](#variadic-arguments)
+  - [Maps](#maps)
+  - [Struct Literals](#struct-literals)
 - [Methods and Interfaces](#methods-and-interfaces)
   - [Methods](#methods)
   - [Interfaces](#interfaces)
@@ -168,7 +169,7 @@ type Animal interface {
 
 ---
 
-## Zero Values of Data Types
+### Zero Values of Data Types
 
 | Data Type                   | Zero Value                                    |
 | --------------------------- | --------------------------------------------- |
