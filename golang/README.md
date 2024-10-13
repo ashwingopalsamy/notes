@@ -4,6 +4,53 @@ worth a skim through to refresh '**_Go_**' in one go.
 
 ---
 
+---
+
+## Table of Contents
+- [notes/go](#notesgo)
+  - [Table of Contents](#table-of-contents)
+  - [Go Data Types](#go-data-types)
+    - [1. **Basic (Primitive) Types**](#1-basic-primitive-types)
+      - [a. **Numeric Types**](#a-numeric-types)
+      - [b. **Boolean Type**](#b-boolean-type)
+      - [c. **String Type**](#c-string-type)
+    - [2. **Composite (Complex) Types**](#2-composite-complex-types)
+      - [a. **Arrays**](#a-arrays)
+      - [b. **Slices**](#b-slices)
+      - [c. **Structs**](#c-structs)
+      - [d. **Maps**](#d-maps)
+      - [e. **Pointers**](#e-pointers)
+      - [f. **Functions**](#f-functions)
+      - [g. **Channels**](#g-channels)
+    - [3. **Interface Types**](#3-interface-types)
+    - [4. **Special Types**](#4-special-types)
+      - [a. **Nil**](#a-nil)
+      - [b. **Constants**](#b-constants)
+    - [5. **User-Defined Types**](#5-user-defined-types)
+      - [a. **Type Alias**](#a-type-alias)
+      - [b. **Custom Types**](#b-custom-types)
+    - [📝 Zero Values of Data Types](#-zero-values-of-data-types)
+    - [📝 Control Statements](#-control-statements)
+      - [Order of Execution](#order-of-execution)
+      - [Order of Evaluation](#order-of-evaluation)
+    - [📝 Pointers](#-pointers)
+    - [📝 Slices](#-slices)
+    - [📝 Variadic Arguments](#-variadic-arguments)
+    - [📝 Maps](#-maps)
+    - [📝 Struct Literals](#-struct-literals)
+  - [Methods and Interfaces](#methods-and-interfaces)
+    - [📝 Methods](#-methods)
+    - [📝 Interfaces](#-interfaces)
+  - [Errors, Panic \& Defer](#errors-panic--defer)
+    - [📝 Errors](#-errors)
+    - [📝 Defer](#-defer)
+    - [📝 Panic](#-panic)
+    - [📝 Recover](#-recover)
+  - [Types, Type Assertions, Type Switches](#types-type-assertions-type-switches)
+    - [📝 Type Assertions](#-type-assertions)
+
+---
+
 ## Go Data Types
 
 ### 1. **Basic (Primitive) Types**
