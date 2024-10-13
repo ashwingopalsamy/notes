@@ -4,59 +4,54 @@ worth a skim through to refresh '**_Go_**' in one go.
 
 ---
 
----
-
 ## Table of Contents
-- [notes/go](#notesgo)
-  - [Table of Contents](#table-of-contents)
-  - [Go Data Types](#go-data-types)
-    - [1. **Basic (Primitive) Types**](#1-basic-primitive-types)
-      - [a. **Numeric Types**](#a-numeric-types)
-      - [b. **Boolean Type**](#b-boolean-type)
-      - [c. **String Type**](#c-string-type)
-    - [2. **Composite (Complex) Types**](#2-composite-complex-types)
-      - [a. **Arrays**](#a-arrays)
-      - [b. **Slices**](#b-slices)
-      - [c. **Structs**](#c-structs)
-      - [d. **Maps**](#d-maps)
-      - [e. **Pointers**](#e-pointers)
-      - [f. **Functions**](#f-functions)
-      - [g. **Channels**](#g-channels)
-    - [3. **Interface Types**](#3-interface-types)
-    - [4. **Special Types**](#4-special-types)
-      - [a. **Nil**](#a-nil)
-      - [b. **Constants**](#b-constants)
-    - [5. **User-Defined Types**](#5-user-defined-types)
-      - [a. **Type Alias**](#a-type-alias)
-      - [b. **Custom Types**](#b-custom-types)
-    - [📝 Zero Values of Data Types](#-zero-values-of-data-types)
-    - [📝 Control Statements](#-control-statements)
-      - [Order of Execution](#order-of-execution)
-      - [Order of Evaluation](#order-of-evaluation)
-    - [📝 Pointers](#-pointers)
-    - [📝 Slices](#-slices)
-    - [📝 Variadic Arguments](#-variadic-arguments)
-    - [📝 Maps](#-maps)
-    - [📝 Struct Literals](#-struct-literals)
-  - [Methods and Interfaces](#methods-and-interfaces)
-    - [📝 Methods](#-methods)
-    - [📝 Interfaces](#-interfaces)
-  - [Errors, Panic \& Defer](#errors-panic--defer)
-    - [📝 Errors](#-errors)
-    - [📝 Defer](#-defer)
-    - [📝 Panic](#-panic)
-    - [📝 Recover](#-recover)
-  - [Types, Type Assertions, Type Switches](#types-type-assertions-type-switches)
-    - [📝 Type Assertions](#-type-assertions)
+- [Go Data Types](#go-data-types)
+  - [1. Basic (Primitive) Types](#1-basic-primitive-types)
+    - [a. Numeric Types](#a-numeric-types)
+    - [b. Boolean Type](#b-boolean-type)
+    - [c. String Type](#c-string-type)
+  - [2. Composite (Complex) Types](#2-composite-complex-types)
+    - [a. Arrays](#a-arrays)
+    - [b. Slices](#b-slices)
+    - [c. Structs](#c-structs)
+    - [d. Maps](#d-maps)
+    - [e. Pointers](#e-pointers)
+    - [f. Functions](#f-functions)
+    - [g. Channels](#g-channels)
+  - [3. Interface Types](#3-interface-types)
+  - [4. Special Types](#4-special-types)
+    - [a. Nil](#a-nil)
+    - [b. Constants](#b-constants)
+  - [5. User-Defined Types](#5-user-defined-types)
+    - [a. Type Alias](#a-type-alias)
+    - [b. Custom Types](#b-custom-types)
+- [Zero Values of Data Types](#zero-values-of-data-types)
+- [Control Statements](#control-statements)
+  - [Order of Execution](#order-of-execution)
+  - [Order of Evaluation](#order-of-evaluation)
+- [Pointers](#pointers)
+- [Slices](#slices)
+- [Variadic Arguments](#variadic-arguments)
+- [Maps](#maps)
+- [Struct Literals](#struct-literals)
+- [Methods and Interfaces](#methods-and-interfaces)
+  - [Methods](#methods)
+  - [Interfaces](#interfaces)
+- [Errors, Panic \& Defer](#errors-panic--defer)
+  - [Errors](#errors)
+  - [Defer](#defer)
+  - [Panic](#panic)
+- [Types, Type Assertion, Type Switches](#types-type-assertions-type-switches)
+  - [Type Assertions](#type-assertions)
 
 ---
 
 ## Go Data Types
 
-### 1. **Basic (Primitive) Types**
+### 1. Basic (Primitive) Types
 These are Go's fundamental types.
 
-#### a. **Numeric Types**
+#### a. Numeric Types
 - **Integer Types**: Store whole numbers.
   - **Signed Integers**: Hold positive and negative values.
     - `int`, `int8`, `int16`, `int32`, `int64`
@@ -73,30 +68,30 @@ These are Go's fundamental types.
   - `byte` (alias for `uint8`)
   - `rune` (alias for `int32`, represents Unicode code points)
 
-#### b. **Boolean Type**
+#### b. Boolean Type
 - `bool`: Represents `true` or `false`.
 
-#### c. **String Type**
+#### c. String Type
 - `string`: Sequence of UTF-8 encoded text.
 
 ---
 
-### 2. **Composite (Complex) Types**
+### 2. Composite (Complex) Types
 These types are built using other types.
 
-#### a. **Arrays**
+#### a. Arrays
 - Fixed-size collection of elements of the same type.
   ```go
   var arr [5]int
   ```
 
-#### b. **Slices**
+#### b. Slices
 - Dynamically-sized arrays.
   ```go
   var s []int = []int{1, 2, 3}
   ```
 
-#### c. **Structs**
+#### c. Structs
 - Group related data with different types.
   ```go
   type Person struct {
@@ -105,25 +100,25 @@ These types are built using other types.
   }
   ```
 
-#### d. **Maps**
+#### d. Maps
 - Collection of key-value pairs with unique keys.
   ```go
   var m map[string]int = make(map[string]int)
   ```
 
-#### e. **Pointers**
+#### e. Pointers
 - Store memory addresses of variables.
   ```go
   var p *int = &x
   ```
 
-#### f. **Functions**
+#### f. Functions
 - Functions can be passed as variables.
   ```go
   var f func(int) int
   ```
 
-#### g. **Channels**
+#### g. Channels
 - Facilitate communication between goroutines.
   ```go
   ch := make(chan int)
@@ -131,7 +126,7 @@ These types are built using other types.
 
 ---
 
-### 3. **Interface Types**
+### 3. Interface Types
 Interfaces define method signatures a type must implement, supporting polymorphism.
 ```go
 type Animal interface {
@@ -141,15 +136,15 @@ type Animal interface {
 
 ---
 
-### 4. **Special Types**
+### 4. Special Types
 
-#### a. **Nil**
+#### a. Nil
 - Zero value for pointers, interfaces, maps, slices, channels, and function types.
   ```go
   var p *int = nil
   ```
 
-#### b. **Constants**
+#### b. Constants
 - Declared with `const`, can be basic types like `int`, `float`, `string`, or `bool`.
   ```go
   const Pi = 3.14
@@ -157,15 +152,15 @@ type Animal interface {
 
 ---
 
-### 5. **User-Defined Types**
+### 5. User-Defined Types
 
-#### a. **Type Alias**
+#### a. Type Alias
 - New names for existing types.
   ```go
   type Age int
   ```
 
-#### b. **Custom Types**
+#### b. Custom Types
 - Create types that behave differently from their underlying type.
   ```go
   type Kilometers float64
@@ -173,7 +168,7 @@ type Animal interface {
 
 ---
 
-### 📝 Zero Values of Data Types
+## Zero Values of Data Types
 
 | Data Type                   | Zero Value                                    |
 | --------------------------- | --------------------------------------------- |
@@ -196,9 +191,9 @@ type Animal interface {
 
 ---
 
-### 📝 Control Statements
+## Control Statements
 
-#### Order of Execution
+### Order of Execution
 
 - `if/else`:
   - The condition is evaluated first. If true, the if block executes; otherwise, the else block (if present) executes.
@@ -216,15 +211,15 @@ type Animal interface {
   - Defer calls are evaluated immediately but the function call is not executed until the surrounding function returns.
 
 - **Definition**: Control statements direct the flow of execution in a program.
-- **Use Cases**: Managing conditional logic, loops and deferred execution.
+- **Use Cases**: Managing conditional logic, loops, and deferred execution.
 - **Tips**: Use `defer` for resource cleanup and to ensure execution order in a function.
 - **Lesser-known facts**: In `switch` statements, if no case matches, the default case (if present) will execute.
 
-#### Order of Evaluation
+### Order of Evaluation
 
 - In Go, function arguments are evaluated before the function is called.
 - Go determines the order of evaluation of function arguments by evaluating them from **left to right** before the function call, as specified in the language specification.
-- In languages like C, C++, Java there is no definite specification that mentions on the order of evaluation of function arguments.
+- In languages like C, C++, Java there is no definite specification that mentions the order of evaluation of function arguments.
 - In Python, the order of evaluation of function arguments is similar to Go.
 
 - **Definition**: The order in which expressions and function arguments are evaluated before the execution of the function.
@@ -232,9 +227,11 @@ type Animal interface {
 - **Tips**: Be mindful of the evaluation order to avoid unexpected results, especially with mutable types.
 - **Lesser-known facts**: The evaluation order is consistent across Go functions, reducing ambiguity compared to other languages.
 
---- 
+---
 
-### 📝 Pointers
+## Composite Data Types
+
+### Pointers
 
 - Unlike C, Go does not have 'pointer arithmetic'.
 - As mathematical operations on memory addresses may potentially cause security vulnerabilities, Go intentionally omitted the use of pointer arithmetics.
@@ -253,13 +250,17 @@ type Animal interface {
 
 ---
 
-### 📝 Slices
+### Slices
 
+- Internally, slices are described as a **struct** containing:
+  - A pointer to the array that holds the elements.
+  - The length of the slice.
+  - The capacity of the slice (maximum number of elements it can hold without reallocating).
 - Slices are like references to arrays. When you create a slice from an existing array, you are interacting with the underlying array.
 - Zero value of a slice is `nil`.
 - Slices have a length and capacity. When you attempt to change a slice's capacity beyond its limit, you get a `slice bounds out of range` error.
 - Slices can grow as needed by using the `append` function, which may result in a new array being allocated.
-
+- When you append to a slice beyond its capacity, Go automatically reallocates the underlying array and adjusts the slice's pointer.
 - **Definition**: Slices are dynamically-sized, flexible views into the elements of an array.
 - **Use Cases**: Ideal for handling collections of items where the size may change.
 - **Tips**: Use the built-in `append` function to safely add elements to slices.
@@ -267,7 +268,7 @@ type Animal interface {
 
 ---
 
-### 📝 Variadic Arguments
+### Variadic Arguments
 
 - A variadic function accepts a variable number of arguments of a specified type.
 - Syntax: `func example(nums ...int)` allows the function to receive zero or more integers as arguments.
@@ -282,7 +283,7 @@ type Animal interface {
 
 ---
 
-### 📝 Maps
+### Maps
 
 
 - A Map will not throw an error if the value already exists. Instead, it overwrites the value with the newly provided value.
@@ -310,68 +311,79 @@ type Animal interface {
 
 ---
 
-### 📝 Struct Literals
+### Struct Literals
 
-- A struct literal denotes a newly allocated struct value by listing the values of its fields.
-- The order of fields in a struct literal doesn't matter.
-- You can omit fields in a struct literal, and their values will be the zero value for their respective types.
-- You can create a pointer to a struct literal using the `&` operator.
-
-- **Definition**: A struct literal is a way to create a new instance of a struct and initialize its fields in one statement.
-- **Use Cases**: Useful for creating new structs without needing separate variable assignments.
-- **Tips**: Use named fields for clarity, especially when a struct has many fields.
-- **Lesser-known facts**: You can define and initialize anonymous structs directly within a function without needing a separate type declaration.
-
-
-## Methods and Interfaces
-
-### 📝 Methods
-
-- In Go, a method is just a function with receiver argument.
-- One cannot declare a method with a receiver whose type is defined in another package (including internal packages).
-
-- **Definition**: A method is a function that is associated with a specific type, allowing it to operate on the data contained in that type.
-- **Use Cases**: Encapsulating behavior related to a type, providing object-oriented features in Go.
-- **Tips**: Use pointer receivers when the method needs to modify the receiver.
-- **Lesser-known facts**: Methods can be defined for any type, including built-in types.
+- Go allows initializing structs using struct literals.
+- Struct literals can be defined in two ways:
+  - **Positional**: Assigning values in the order of struct fields.
+    ```go
+    p := Person{"Alice", 30}
+    ```
+  - **Named**: Assigning values by field names.
+    ```go
+    p := Person{Name: "Alice", Age: 30}
+    ```
+- Named fields allow flexibility in initialization order and improve code readability.
+- **Definition**: A way to create and initialize structs at the same time.
+- **Use Cases**: Creating instances of structs easily and clearly.
+- **Tips**: Prefer named literals for clarity, especially with large structs.
+- **Lesser-known facts**: The order of fields in a struct literal can be changed when using named fields.
 
 ---
 
-### 📝 Interfaces
+## Methods and Interfaces
 
-- Interfaces are implemented implicitly in Go. There is no `implements` keyword.
+### Methods
 
+- In Go, methods are functions with a special receiver argument.
+- The receiver can be a value or a pointer type.
+- One cannot declare a method with a receiver whose type is defined in another package (including internal packages).
+- Methods allow you to define behaviors for types.
+- **Definition**:  A method is a function that is associated with a specific type, allowing it to operate on the data contained in that type.
+- **Use Cases**: Encapsulation of behavior related to data structures.
+- **Tips**: Use pointer receivers for large structs to avoid copying.
+- **Lesser-known facts**: 
+  - Methods can be defined for any type, including built-in types.
+  - Go does not support method overloading based on parameter types.
+
+### Interfaces
+
+- Interfaces define a set of method signatures.
+- A type implements an interface by implementing its methods.
+- Go does not require explicit declaration of intent to implement an interface.
 - **Definition**: An interface is a type that specifies a contract of methods without implementing them, allowing different types to satisfy that interface.
 - **Use Cases**: Enable polymorphism and allow functions to operate on different types through a common interface.
-- **Tips**: Keep interfaces small and focused to improve code modularity and readability.
+- **Tips**: Use interfaces to define common behavior without tightly coupling types.
 - **Lesser-known facts**: An empty interface (`interface{}`) can hold values of any type, making it a powerful but potentially risky tool for type assertions.
 
 ---
 
 ## Errors, Panic & Defer
 
-### 📝 Errors
-- Errors are the way to signify failure when calling a function/method.
-- More on errors at: [Don’t just check errors, handle them gracefully](https://dave.cheney.net/2016/04/27/dont-just-check-errors-handle-them-gracefully)
+### Errors
 
+- Go uses the `error` type to represent errors.
+- Functions can return an error value along with the result.
+- The idiomatic way to handle errors in Go is to check the error value immediately after calling a function that returns an error.
+- More on errors at: [Don’t just check errors, handle them gracefully](https://dave.cheney.net/2016/04/27/dont-just-check-errors-handle-them-gracefully)
 - **Definition**: An error in Go is represented by the `error` type, used to signal an issue that occurred during a function's execution.
 - **Use Cases**: Returning errors allows functions to communicate failure and handle it gracefully.
 - **Tips**: Always check for errors after a function call that can return one.
-- **Lesser-known facts**: Custom error types can provide additional context beyond the basic error string.
+- **Lesser-known facts**: Custom error types can provide additional context beyond the basic error string. You can create custom error types by implementing the `Error()` method on a struct.
 
-### 📝 Defer
+### Defer
 
 - A deferred function’s arguments are evaluated when the defer statement is evaluated.
-- Deferred function calls are executed in Last In First Out order after the surrounding function returns.
+- The `defer` statement defers the execution of a function until the surrounding function returns.
+- Defer statements are executed in **last-in-first-out** order.
 - Deferred functions may read and assign to the returning function’s named return values.
 - Defer calls are evaluated immediately but the function call is not executed until the surrounding function returns.
-
 - **Definition**: The `defer` statement schedules a function call to be run after the function completes, useful for cleanup tasks.
-- **Use Cases**: Commonly used for closing files, unlocking mutexes, and other resource management tasks.
+- **Use Cases**: Closing files, unlocking mutexes, and managing other cleanup tasks.
 - **Tips**: Use `defer` to ensure that cleanup happens even if a function exits unexpectedly.
 - **Lesser-known facts**: Deferred functions are executed in reverse order of their declaration, which can be useful in resource management.
 
-### 📝 Panic
+### Panic
 
 - Panic is a built-in function that stops the ordinary flow of control and begins panicking.
 - Panics can be initiated by invoking panic directly.
@@ -382,7 +394,7 @@ type Animal interface {
 - **Tips**: Use panic sparingly and only for unrecoverable situations; prefer error returns for regular error handling.
 - **Lesser-known facts**: Panics can be caught and handled using `recover`, allowing the program to regain control.
 
-### 📝 Recover
+### Recover
 
 - Recover is a built-in function that regains control of a panicking goroutine.
 - Recover is only useful inside deferred functions. During normal execution, a call to recover will return nil and have no other effect.
@@ -395,7 +407,7 @@ type Animal interface {
 
 ## Types, Type Assertions, Type Switches
 
-### 📝 Type Assertions
+### Type Assertions
 
 - A type assertion provides access to an interface value's underlying concrete value.
 - Syntax: `t := i.(T)` asserts that the interface value `i` holds the concrete type `T` and assigns the underlying value to the variable `t`.
@@ -409,7 +421,4 @@ type Animal interface {
 - **Use Cases**: Useful in scenarios where you need to assert the specific type of an interface, such as when handling different types through a common interface.
 - **Tips**: Use the two-value form of type assertion to avoid panics and to handle cases where the type may not match.
 - **Lesser-known facts**: Type assertions are similar in syntax to map lookups, making them intuitive for Go developers. Additionally, an empty interface (`interface{}`) can hold any type, allowing for flexible design but also requiring careful type assertions.
-
-
-
 
