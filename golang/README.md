@@ -184,6 +184,7 @@ type Animal interface {
 | map                         | nil                                           |
 | channel                     | nil                                           |
 | function                    | nil                                           |
+| time.Time | "0001-01-01" |
 
 - **Definition**: Zero values are the default values assigned to variables of a type when no explicit value is given.
 - **Use Cases**: Useful for initializing variables without needing to set them to a specific value.
